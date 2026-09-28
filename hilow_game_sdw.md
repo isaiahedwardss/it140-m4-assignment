@@ -34,7 +34,7 @@ The worksheet intentionally asks questions instead of supplying the completed Hi
 
 **Your notes:**
 
-TODO: Summarize the program purpose in your own words.
+The program lets Bella play a higher/lower guessing game. It picks a random number between two numbers she enters and keeps asking her to guess until she gets the correct number. 
 
 ## 2. Identify Inputs and Outputs
 
@@ -44,12 +44,11 @@ TODO: Summarize the program purpose in your own words.
 
 **Inputs:**
 
-* TODO: Identify the range inputs.
-* TODO: Identify the repeated game input.
+The lower bound and upper bound.
+The player's guess.
 
 **Outputs:**
-
-* TODO: Identify the required categories of output.
+The program tells the player if the guess is to low, too high, or correct. It also gives a message when the numbers entered are not valid. 
 
 Do not choose exact message wording yet unless it helps you reason about the behavior.
 
@@ -61,8 +60,8 @@ Do not choose exact message wording yet unless it helps you reason about the beh
 
 **Your notes:**
 
-* TODO: Bounds validation rule and response.
-* TODO: Guess validation rule and response.
+The lower bound must be less than the upper bound. If it is not, the program asks the user to enter the bounds again. 
+The guess must be between the lower and upper bounds. If it is outside the range, the program asks the user to enter another guess. 
 
 ## 4. Identify Processing and Decisions
 
@@ -72,8 +71,8 @@ Do not choose exact message wording yet unless it helps you reason about the beh
 
 **Your notes:**
 
-* TODO: Generated value.
-* TODO: Required valid-guess outcomes.
+The program generates a random number between the lower and upper bounds. 
+The guess can be too low, to high, or the correct number. 
 
 ## 5. Identify Repeated Behavior
 
@@ -82,10 +81,9 @@ Do not choose exact message wording yet unless it helps you reason about the beh
 **Prompt:** What work can repeat? For each repeated part, what condition causes repetition and what condition lets the program continue or stop?
 
 **Your notes:**
-
-* TODO: Bounds-related repetition.
-* TODO: Guess-validation repetition.
-* TODO: Game repetition and stopping condition.
+Keep asking for the lower and upper bounds until the lower bound is less than the upper bound. 
+Keep asking asking for a guess until the guess is within the valid range. 
+Keep asking for guesses and telling the player if the guess is too low or too high. Stop when the player guesses the correct number. 
 
 ## 6. Distinguish Requirements From Extra Features
 
@@ -94,9 +92,8 @@ Do not choose exact message wording yet unless it helps you reason about the beh
 **Prompt:** List one or two features you might be tempted to add that are not required by the assignment.
 
 **Your notes:**
-
-* TODO: Optional feature that should not become a graded requirement.
-* TODO: Another optional feature, or delete this line.
+Keeping track of how many guesses the player makes.
+Adding different dificulty levels. 
 
 ## 7. Analyze Checkpoint
 
@@ -121,11 +118,12 @@ Before moving to Design:
 
 **Your notes:**
 
-1. TODO
-2. TODO
-3. TODO
-4. TODO
-5. TODO
+1. Ask the player for the lower and upper bounds.
+2. Check that the lower bound is less than the upper bound.
+3. Generate a random number between the two bounds.
+4. Ask the player to guess a number and check if the guess is in range.
+5. Tell the player if the guess is too low, too high, or correct, and keep playing until they guess correctly.
+
 
 ## 9. Plan Validation Before Detailed Pseudocode
 
@@ -135,8 +133,9 @@ Before moving to Design:
 
 **Your notes:**
 
-* TODO: Bounds-validation plan.
-* TODO: Guess-validation plan.
+* Bounds-validation plan: Check that the lower bound is less than the upper bound. If it is not, ask the player to enter the bounds again.
+
+* Guess-validation plan: Check that the guess is between the lower and upper bounds. If it is not, ask the player to enter another guess.
 
 ## 10. Plan Repetition
 
@@ -151,7 +150,7 @@ For each repeated section, answer:
 
 **Your notes:**
 
-TODO: Summarize the loop structure in words without writing the completed pseudocode.
+The program will repeat asking for the bounds until the lower bound is less than the upper bound. After the random number is generated, the program will keep asking for guesses. If the guess is outside the range, the player will be asked for another guess. If the guess is too low or too high, the game will continue. The guessing loop stops when the player guesses the correct number.
 
 ## 11. Plan Decision Branching
 
@@ -161,7 +160,7 @@ TODO: Summarize the loop structure in words without writing the completed pseudo
 
 **Your notes:**
 
-TODO: Identify the required outcomes without writing completed branch statements.
+The program needs to check three possible results. If the guess is lower than the random number, it tells the player the guess is too low. If the guess is higher, it tells the player the guess is too high. If the guess matches the random number, it tells the player they got it right and ends the game.
 
 ## 12. Requirements-to-Design Traceability
 
@@ -169,12 +168,12 @@ After drafting `design/hilow_game.pseudo`, locate where your design addresses ea
 
 | Requirement group | Where it appears in your pseudocode |
 | --- | --- |
-| Bounds input and validation | TODO |
-| Random-number generation | TODO |
-| Guess input and validation | TODO |
-| Too-low / too-high / correct decisions | TODO |
-| Repetition until correct | TODO |
-| Required outputs | TODO |
+| Bounds input and validation | Steps 1-2 |
+| Random-number generation | Step 3 |
+| Guess input and validation | Step 4 |
+| Too-low / too-high / correct decisions | Step 5 |
+| Repetition until correct | Steps 2, 4, and 5 |
+| Required outputs | Steps 2 and 5 |
 
 If a required behavior has no corresponding design step, revise the pseudocode.
 
@@ -184,11 +183,11 @@ If a required behavior has no corresponding design step, revise the pseudocode.
 
 Choose one scenario that includes repetition or validation. Follow your pseudocode one statement at a time.
 
-**Scenario:** TODO
+**Scenario:** The player enters an invalid upper bound and then makes a few guesses before getting the correct number.
 
 **Trace notes:**
 
-TODO: Record the path through your pseudocode and what causes each branch or loop decision.
+The program first asks for the lower and upper bounds. If the upper bound is not greater than the lower bound, it asks for the bounds again. Once the bounds are valid, the program generates a random number. The player enters a guess. If the guess is too low or too high, the program gives a message and asks for another guess. The program keeps doing this until the guess matches the random number.
 
 ## 14. Rubric Review
 
